@@ -27,10 +27,10 @@ export default {
         whiteText: "#fff",
         lightText: "#ccc",
         quantity_box: "#f0f2f2",
-        footerbottom: "#131a22",
+        footerBottom: "#131a22",
       },
       boxShadow: {
-        textShadow: "0px 0px 32px 1px rgba(199, 199, 199, 1)",
+        testShadow: "0px 0px 32px 1px rgba(199, 199, 199, 1)",
         amazonInput: "0 0 3px 2px rgb(228 121 17 / 50%)",
       },
     },

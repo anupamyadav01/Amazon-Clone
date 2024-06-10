@@ -3,7 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import SideNavContent from "../SideNavContent";
+import SideNavContent from "./SideNavContent";
 
 const HeaderBottom = () => {
   const [sideBar, setSideBar] = useState(false);
@@ -17,7 +17,7 @@ const HeaderBottom = () => {
     });
   }, [ref, setSideBar]);
 
-  console.log(ref);
+  // console.log(ref);
   return (
     <div className="flex h-[36px] w-full items-center bg-amazon_light px-4 text-white">
       {/* list items starts  */}
@@ -29,11 +29,13 @@ const HeaderBottom = () => {
           <MenuIcon />
           All
         </li>
-        <li className="headerHover">Today&apos;s Deals</li>
-        <li className="headerHover">Customer Service</li>
-        <li className="headerHover">Gift Cards</li>
-        <li className="headerHover">Registry</li>
-        <li className="headerHover">Sell</li>
+        <li className="headerHover hidden md:inline-flex">
+          Today&apos;s Deals
+        </li>
+        <li className="headerHover hidden md:inline-flex">Customer Service</li>
+        <li className="headerHover hidden md:inline-flex">Gift Cards</li>
+        <li className="headerHover hidden md:inline-flex">Registry</li>
+        <li className="headerHover hidden md:inline-flex">Sell</li>
       </ul>
       {/* list items ends */}
       {/* Side nav starts here  */}
@@ -45,7 +47,7 @@ const HeaderBottom = () => {
               initial={{ opacity: 0, x: -500 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="scroll relative h-full w-[350px] overflow-x-hidden overflow-y-scroll border border-black bg-white"
+              className="scroll relative h-full w-[80%] overflow-x-hidden overflow-y-scroll border border-black bg-white md:w-[350px]"
             >
               <div className="sticky left-0 top-0 flex w-full items-center gap-4 bg-amazon_light px-6 py-2 text-white">
                 <AccountCircleIcon />
@@ -80,7 +82,7 @@ const HeaderBottom = () => {
             </motion.div>
             <span
               onClick={() => setSideBar((prev) => !prev)}
-              className="absolute left-[360px] top-0 flex h-10 w-10 cursor-pointer items-center justify-center text-white duration-300 hover:text-white"
+              className="md:left[360px] absolute left-[340px] top-0 flex h-10 w-10 cursor-pointer items-center justify-center text-white duration-300 hover:text-white"
             >
               <CloseIcon fontSize="large" />
             </span>

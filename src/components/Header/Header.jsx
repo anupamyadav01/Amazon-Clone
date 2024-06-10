@@ -10,7 +10,7 @@ const Header = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div>
+    <div className="sticky top-0 z-50 w-full">
       <div className="flex w-full items-center gap-4 bg-amazon_blue px-4 py-3 text-white">
         {/* logo image  */}
         <div className="headerHover">
@@ -18,7 +18,7 @@ const Header = () => {
         </div>
         {/* logo ends  */}
         {/* location icon  */}
-        <div className="headerHover">
+        <div className="headerHover hidden mdl:inline-flex">
           <LocationOnIcon className="text-white" />
           <p className="flex flex-col text-sm font-light text-lightText">
             Deliver to{" "}
@@ -29,7 +29,7 @@ const Header = () => {
         </div>
         {/* location icon ends here  */}
         {/* search bar starts */}
-        <div className="relative flex h-10 flex-grow rounded-md">
+        <div className="relative hidden h-10 flex-grow rounded-md lgl:flex">
           <span
             onClick={() => setShowAll((prev) => !prev)}
             className="flex h-full w-14 cursor-pointer items-center justify-center rounded-bl-md rounded-tl-md border-2 bg-gray-200 font-titleFont text-sm text-amazon_blue duration-300 hover:bg-gray-300"
@@ -66,8 +66,10 @@ const Header = () => {
         {/* search bar ends */}
         {/* signin starts here  */}
         <div className="headerHover flex flex-col items-start justify-center">
-          <p className="text-xs font-light text-lightText">Hello, Sign in</p>
-          <p className="-mt-1 text-sm font-semibold text-whiteText">
+          <p className="text-sm font-light text-white mdl:text-xs mdl:text-lightText">
+            Hello, Sign in
+          </p>
+          <p className="-mt-1 hidden text-sm font-semibold text-whiteText mdl:inline-flex">
             Account & Lists{" "}
             <span>
               <ArrowDropDownOutlinedIcon />
@@ -76,7 +78,7 @@ const Header = () => {
         </div>
         {/* signin ends here */}
         {/* return and orders starts here */}
-        <div className="headerHover flex flex-col items-start justify-center">
+        <div className="headerHover hidden flex-col items-start justify-center mdl:flex">
           <p className="text-xs font-light text-lightText">Returns</p>
           <p className="-mt-1 text-sm font-semibold text-whiteText">& Orders</p>
         </div>
