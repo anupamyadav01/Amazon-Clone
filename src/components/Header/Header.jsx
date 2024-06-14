@@ -89,7 +89,15 @@ const Header = () => {
         <div className="headerHover hidden flex-col items-start justify-center mdl:flex">
           <p className="text-xs font-light text-lightText">Returns</p>
           <p className="-mt-1 text-sm font-semibold text-whiteText">& Orders</p>
-        </div>
+        </div>{" "}
+        <Link to="/chatwithai">
+          <div className="headerHover hidden flex-col items-start justify-center mdl:flex">
+            <p className="text-xs font-light text-lightText">Talk to</p>
+            <p className="-mt-1 ml-3 text-sm font-semibold text-whiteText">
+              AI
+            </p>
+          </div>
+        </Link>
         {/* return and orders ends here */}
         {/* cart icon starts here */}
         <Link to="/cart">

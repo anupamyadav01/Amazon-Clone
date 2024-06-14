@@ -12,6 +12,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Registration from "./pages/Registration";
+import ChatWithAI from "./pages/ChatWithAI";
 
 const Layout = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route index element={<Home />} loader={productData}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/chatwithai" element={<ChatWithAI />}></Route>
         <Route path="/registration" element={<Registration />}></Route>
       </Route>,
     ),
