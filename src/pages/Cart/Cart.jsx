@@ -74,7 +74,7 @@ const Cart = () => {
           </div>
           <div>
             <p className="flex items-center justify-center px-10 font-semibold">
-              Total: <span className="text-lg font-bold">$50</span>
+              Total: <span className="text-lg font-bold">$0</span>
             </p>
           </div>
           <button className="to mt-3 w-full rounded-md border border-yellow-500 bg-gradient-to-tr from-yellow-400 to-yellow-200 py-1.5 font-titleFont text-base font-medium duration-200 hover:border-yellow-700 hover:from-yellow-300 hover:to-yellow-400 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500">
