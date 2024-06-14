@@ -2,9 +2,9 @@ import { footerBottomItem } from "../../constants";
 
 const FooterBottom = () => {
   return (
-    <div className="bg-footerBottom w-full py-8">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid w-full grid-cols-7 place-content-center gap-3 text-gray-400">
+    <div className="w-full bg-footerBottom py-8">
+      <div className="mx-auto max-w-5xl px-5">
+        <div className="grid w-full grid-cols-3 place-content-center gap-3 text-gray-400 md:grid-cols-5 mdl:grid-cols-6 lgl:grid-cols-7">
           {footerBottomItem.map((item) => {
             return (
               <div className="group cursor-pointer" key={item._id}>

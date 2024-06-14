@@ -6,16 +6,22 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import { allItems } from "../../constants";
 import HeaderBottom from "./HeaderBottom";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [showAll, setShowAll] = useState(false);
+  const products = useSelector((state) => state.amazomReducer.products);
+  console.log(products);
 
   return (
     <div className="sticky top-0 z-50 w-full">
       <div className="flex w-full items-center gap-4 bg-amazon_blue px-4 py-3 text-white">
         {/* logo image  */}
-        <div className="headerHover">
-          <img className="mt-2 w-24" src={logo} alt="logo" />
-        </div>
+        <Link to="/">
+          <div className="headerHover">
+            <img className="mt-2 w-24" src={logo} alt="logo" />
+          </div>
+        </Link>
         {/* logo ends  */}
         {/* location icon  */}
         <div className="headerHover hidden mdl:inline-flex">
@@ -65,17 +71,19 @@ const Header = () => {
         </div>
         {/* search bar ends */}
         {/* signin starts here  */}
-        <div className="headerHover flex flex-col items-start justify-center">
-          <p className="text-sm font-light text-white mdl:text-xs mdl:text-lightText">
-            Hello, Sign in
-          </p>
-          <p className="-mt-1 hidden text-sm font-semibold text-whiteText mdl:inline-flex">
-            Account & Lists{" "}
-            <span>
-              <ArrowDropDownOutlinedIcon />
-            </span>
-          </p>
-        </div>
+        <Link to="/signin">
+          <div className="headerHover flex flex-col items-start justify-center">
+            <p className="text-sm font-light text-white mdl:text-xs mdl:text-lightText">
+              Hello, Sign in
+            </p>
+            <p className="-mt-1 hidden text-sm font-semibold text-whiteText mdl:inline-flex">
+              Account & Lists{" "}
+              <span>
+                <ArrowDropDownOutlinedIcon />
+              </span>
+            </p>
+          </div>
+        </Link>
         {/* signin ends here */}
         {/* return and orders starts here */}
         <div className="headerHover hidden flex-col items-start justify-center mdl:flex">
@@ -84,15 +92,17 @@ const Header = () => {
         </div>
         {/* return and orders ends here */}
         {/* cart icon starts here */}
-        <div className="headerHover relative flex items-start justify-center">
-          <ShoppingCartIcon />
-          <p className="mt-3 text-xs font-semibold text-whiteText">
-            Cart{" "}
-            <span className="absolute -top-1 left-6 flex h-4 items-center justify-center rounded-full bg-[#f3a847] p-1 text-xs font-semibold text-amazon_blue">
-              0
-            </span>
-          </p>
-        </div>
+        <Link to="/cart">
+          <div className="headerHover relative flex items-start justify-center">
+            <ShoppingCartIcon />
+            <p className="mt-3 text-xs font-semibold text-whiteText">
+              Cart{" "}
+              <span className="absolute -top-1 left-6 flex h-4 items-center justify-center rounded-full bg-[#f3a847] p-1 text-xs font-semibold text-amazon_blue">
+                {products.length > 0 ? products.length : 0}
+              </span>
+            </p>
+          </div>
+        </Link>
         {/* cart icon ends here */}
       </div>
       <HeaderBottom />

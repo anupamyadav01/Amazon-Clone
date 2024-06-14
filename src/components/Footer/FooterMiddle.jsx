@@ -5,9 +5,9 @@ import { bdFlag, logo } from "../../assets";
 const FooterMiddle = () => {
   return (
     <div className="w-full bg-amazon_light text-white">
-      <div className="w-full border-b-[1px] border-gray-500 py-10">
+      <div className="w-full border-b-[1px] border-gray-500 p-10">
         <div className="mx-auto max-w-5xl text-gray-300">
-          <div className="grid w-full grid-cols-4 place-items-center items-start">
+          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:place-items-center md:items-start lgl:grid-cols-4">
             {middleList.map((item) => {
               return (
                 <FooterMiddleList

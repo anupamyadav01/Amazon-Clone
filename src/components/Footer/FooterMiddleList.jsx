@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const FooterMiddleList = ({ title, listItems }) => {
   // console.log(listItems);
   return (
-    <div>
+    <div className="w-full">
       <h3 className="mb-3 font-titleFont text-base font-semibold text-white">
         {title}
       </h3>

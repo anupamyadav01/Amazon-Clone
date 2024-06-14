@@ -4,19 +4,19 @@ import ApiIcon from "@mui/icons-material/Api";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-// import { useDispatch } from "react-redux";
-// import { addToCart } from "../../redux/amazonSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/amazomSlice";
 
 const Products = () => {
+  const dispatch = useDispatch();
   const data = useLoaderData();
   const productsData = data.data;
-  // const dispatch = useDispatch();
   return (
     <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-10 px-4 py-12 md:grid-cols-2 xl:grid-cols-4 xl:gap-4">
       {productsData.map((item) => (
         <div
           key={item.id}
-          className="hover:shadow-testShadow relative z-30 flex h-auto flex-col gap-4 border-[1px] border-gray-200 bg-white py-6 shadow-none duration-200 hover:cursor-pointer hover:border-transparent"
+          className="relative z-30 flex h-auto flex-col gap-4 border-[1px] border-gray-200 bg-white py-6 shadow-none duration-200 hover:cursor-pointer hover:border-transparent hover:shadow-testShadow"
         >
           <span className="absolute right-2 top-2 text-xs capitalize italic text-gray-500">
             {item.category}
@@ -79,19 +79,19 @@ const Products = () => {
               </div>
             </div>
             <button
-              // onClick={() =>
-              //   dispatch(
-              //     addToCart({
-              //       id: item.id,
-              //       title: item.title,
-              //       description: item.description,
-              //       price: item.price,
-              //       category: item.category,
-              //       image: item.image,
-              //       quantity: 1,
-              //     }),
-              //   )
-              // }
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: item.id,
+                    title: item.title,
+                    description: item.description,
+                    price: item.price,
+                    category: item.category,
+                    image: item.image,
+                    quantity: 1,
+                  }),
+                )
+              }
               className="to mt-3 w-full rounded-md border border-yellow-500 bg-gradient-to-tr from-yellow-400 to-yellow-200 py-1.5 font-titleFont text-base font-medium duration-200 hover:border-yellow-700 hover:from-yellow-300 hover:to-yellow-400 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500"
             >
               Add to Cart
