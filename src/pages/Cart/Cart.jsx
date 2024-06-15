@@ -28,7 +28,7 @@ const Cart = () => {
   console.log(products);
   return (
     <div className="w-full bg-gray-100 p-4">
-      {products.length === 0 ? (
+      {products.length !== 0 ? (
         <div className="container mx-auto grid h-auto grid-cols-5 gap-4">
           <div className="col-span-4 h-full w-full bg-white px-4">
             <div className="flex items-center justify-between border-b-[1px] border-b-gray-400 py-3 font-titleFont">
