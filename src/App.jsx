@@ -10,6 +10,7 @@ import {
   Outlet,
   Route,
   RouterProvider,
+  ScrollRestoration,
 } from "react-router-dom";
 import Registration from "./pages/Registration";
 import ChatWithAI from "./pages/ChatWithAI";
@@ -18,6 +19,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
+      <ScrollRestoration />
       <Outlet />
       <Footer />
     </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from "react-markdown";
@@ -34,13 +33,13 @@ const ChatWithAI = () => {
           <input
             type="text"
             placeholder="Enter your query here..."
-            className="w-[250px] rounded-3xl border border-gray-300 px-4 py-2 text-xl shadow-sm focus:outline-none lg:w-[400px] xl:w-[500px]"
+            className="w-[250px] rounded-3xl border border-gray-300 px-4 py-2 text-base shadow-sm focus:outline-none lg:w-[400px] xl:w-[500px]"
             style={{ borderRadius: "12px" }}
             onChange={(e) => setInput(e.target.value)}
             value={input}
           />
           <button
-            className="ml-4 mt-4 rounded-xl bg-orange-600 p-2 text-xl text-white shadow-lg hover:bg-orange-700"
+            className="ml-4 mt-4 rounded-xl bg-orange-600 p-2 text-base text-white shadow-lg hover:bg-orange-700"
             onClick={handleSendData}
             disabled={loading}
           >
